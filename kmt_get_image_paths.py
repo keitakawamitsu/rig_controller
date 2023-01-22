@@ -13,7 +13,7 @@ def get_image_paths():
     for file in files:
         if file.endswith(EXT):
             image_list.append(os.path.join(DIR_NAME, file))
-    print("------------------------")
+    print("--------------------")
     return image_list
 
 if __name__ == "__main__":

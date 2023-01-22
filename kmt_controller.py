@@ -280,7 +280,8 @@ def main():
     mainwindow = MainWindow(maya_window)
     mainwindow.show()
 
-main()
+if __name__ == "__main__":
+    main()
 
 
 

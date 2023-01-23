@@ -10,8 +10,8 @@ from PySide2.QtWidgets import*
 
 from maya import OpenMayaUI
 from shiboken2 import wrapInstance
-import kmt_get_image_paths as path
-import kmt_make_curves as curves
+from . import kmt_get_image_paths as path
+from . import kmt_make_curves as curves
 
 
 def get_main_window():

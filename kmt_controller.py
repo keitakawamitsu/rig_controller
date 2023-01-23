@@ -10,9 +10,9 @@ from PySide2.QtWidgets import*
 
 from maya import OpenMayaUI
 from shiboken2 import wrapInstance
-from . import kmt_get_image_paths
-import importlib
-importlib.reload(kmt_get_image_paths)
+import kmt_get_image_paths as path
+import kmt_make_curves as curves
+
 
 def get_main_window():
     """Maya画面の後ろにいかせない"""
@@ -32,40 +32,60 @@ def close_child(app):
 class Tab1Widget(QWidget):
     def __init__(self, parent=None):
         super(Tab1Widget, self).__init__()
-        self.icon_path = kmt_get_image_paths.get_image_paths()
-        # print(self.icon_path[0])
+        self.icon_path = path.get_image_paths("main")
+        
+        self.btn_size = 37
+        self.make_button()
+        self.make_cube
+        self.make_cube
+        self.make_ball
 
-        icon_path = os.path.dirname(__file__)+"/icons"
-        btn_size = 37
+
+    def make_button(self):
         pixmap_Square = QPixmap(self.icon_path[0])
-        scaled_pixmap_Square = pixmap_Square.scaled(btn_size, btn_size, Qt.KeepAspectRatio)
+        scaled_pixmap_Square = pixmap_Square.scaled(self.btn_size, self.btn_size, Qt.KeepAspectRatio)
         self.tool_button00 = QPushButton()
         self.tool_button00.setIcon(scaled_pixmap_Square)
-        self.tool_button00.setIconSize(QSize(btn_size,btn_size))
+        self.tool_button00.setIconSize(QSize(self.btn_size,self.btn_size))
+        self.tool_button00.clicked.connect(self.make_cube)
 
-        pixmap_Cross = QPixmap(icon_path + "/KK_Controller_Cross")
-        scaled_pixmap_Cross = pixmap_Cross.scaled(btn_size, btn_size, Qt.KeepAspectRatio)
+        pixmap_Cross = QPixmap(self.icon_path[1])
+        scaled_pixmap_Cross = pixmap_Cross.scaled(self.btn_size, self.btn_size, Qt.KeepAspectRatio)
         self.tool_button01 = QPushButton()
         self.tool_button01.setIcon(scaled_pixmap_Cross)
-        self.tool_button01.setIconSize(QSize(btn_size,btn_size))
+        self.tool_button01.setIconSize(QSize(self.btn_size,self.btn_size))
+        self.tool_button01.clicked.connect(self.make_cone)
 
-        pixmap_Dia = QPixmap(icon_path + "/KK_Controller_Dia")
-        scaled_pixmap_Dia = pixmap_Dia.scaled(btn_size, btn_size, Qt.KeepAspectRatio)
+
+        pixmap_Dia = QPixmap(self.icon_path[2])
+        scaled_pixmap_Dia = pixmap_Dia.scaled(self.btn_size, self.btn_size, Qt.KeepAspectRatio)
         self.tool_button02 = QPushButton()
         self.tool_button02.setIcon(scaled_pixmap_Dia)
-        self.tool_button02.setIconSize(QSize(btn_size,btn_size))
+        self.tool_button02.setIconSize(QSize(self.btn_size,self.btn_size))
+        self.tool_button02.clicked.connect(self.make_ball)
 
-        pixmap_03 = QPixmap(icon_path + "/KK_Controller_Dia")
-        scaled_pixmap_03 = pixmap_03.scaled(btn_size, btn_size, Qt.KeepAspectRatio)
+
+        pixmap_03 = QPixmap(self.icon_path[3])
+        scaled_pixmap_03 = pixmap_03.scaled(self.btn_size, self.btn_size, Qt.KeepAspectRatio)
         self.tool_button03 = QPushButton()
         self.tool_button03.setIcon(scaled_pixmap_03)
-        self.tool_button03.setIconSize(QSize(btn_size,btn_size))
+        self.tool_button03.setIconSize(QSize(self.btn_size,self.btn_size))
+        self.tool_button03.clicked.connect(self.make_ball)
 
-        pixmap_04 = QPixmap(icon_path + "/KK_Controller_Dia")
-        scaled_pixmap_04 = pixmap_04.scaled(btn_size, btn_size, Qt.KeepAspectRatio)
+
+        pixmap_04 = QPixmap(self.icon_path[4])
+        scaled_pixmap_04 = pixmap_04.scaled(self.btn_size, self.btn_size, Qt.KeepAspectRatio)
         self.tool_button04 = QPushButton()
         self.tool_button04.setIcon(scaled_pixmap_04)
-        self.tool_button04.setIconSize(QSize(btn_size,btn_size))
+        self.tool_button04.setIconSize(QSize(self.btn_size,self.btn_size))
+        self.tool_button04.clicked.connect(self.make_ball)
+
+        pixmap_05 = QPixmap(self.icon_path[5])
+        scaled_pixmap_05 = pixmap_05.scaled(self.btn_size, self.btn_size, Qt.KeepAspectRatio)
+        self.tool_button05 = QPushButton()
+        self.tool_button05.setIcon(scaled_pixmap_05)
+        self.tool_button05.setIconSize(QSize(self.btn_size,self.btn_size))
+        self.tool_button05.clicked.connect(self.make_ball)
 
         hbox = QHBoxLayout()
         hbox.addWidget(self.tool_button00)
@@ -73,8 +93,25 @@ class Tab1Widget(QWidget):
         hbox.addWidget(self.tool_button02)
         hbox.addWidget(self.tool_button03)
         hbox.addWidget(self.tool_button04)
+        hbox.addWidget(self.tool_button05)
         
         self.setLayout(hbox)
+
+    def make_cube(self):
+        curves.make_curves("cube")
+
+    def make_cone(self):
+        curves.make_curves("cone")
+
+    def make_ball(self):
+        curves.make_curves("ball")
+
+    def make_foreArrow(self):
+        curves.make_curves("ball")
+
+    def make_ball(self):
+        curves.make_curves("ball")
+
 
 class Tab2Widget(QWidget):
     def __init__(self, parent=None):

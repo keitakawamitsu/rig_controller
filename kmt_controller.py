@@ -35,11 +35,14 @@ class Tab1Widget(QWidget):
         self.icon_path = path.get_image_paths("main")
         
         self.btn_size = 37
-        self.make_button()
-        self.make_cube
-        self.make_cube
-        self.make_ball
+        self.cv_cube = curves.Curves("cube")
+        self.cv_cone = curves.Curves("cone")
+        self.cv_ball = curves.Curves("ball")
+        self.cv_ForeArrow = curves.Curves("ForeArrow")
+        self.cv_SingleArrow = curves.Curves("SingleArrow")
+        self.cv_Square = curves.Curves("Square")
 
+        self.make_button()
 
     def make_button(self):
         pixmap_Square = QPixmap(self.icon_path[0])
@@ -47,14 +50,14 @@ class Tab1Widget(QWidget):
         self.tool_button00 = QPushButton()
         self.tool_button00.setIcon(scaled_pixmap_Square)
         self.tool_button00.setIconSize(QSize(self.btn_size,self.btn_size))
-        self.tool_button00.clicked.connect(self.make_cube)
+        self.tool_button00.clicked.connect(self.cv_cube.make_curves)
 
         pixmap_Cross = QPixmap(self.icon_path[1])
         scaled_pixmap_Cross = pixmap_Cross.scaled(self.btn_size, self.btn_size, Qt.KeepAspectRatio)
         self.tool_button01 = QPushButton()
         self.tool_button01.setIcon(scaled_pixmap_Cross)
         self.tool_button01.setIconSize(QSize(self.btn_size,self.btn_size))
-        self.tool_button01.clicked.connect(self.make_cone)
+        self.tool_button01.clicked.connect(self.cv_cone.make_curves)
 
 
         pixmap_Dia = QPixmap(self.icon_path[2])
@@ -62,7 +65,7 @@ class Tab1Widget(QWidget):
         self.tool_button02 = QPushButton()
         self.tool_button02.setIcon(scaled_pixmap_Dia)
         self.tool_button02.setIconSize(QSize(self.btn_size,self.btn_size))
-        self.tool_button02.clicked.connect(self.make_ball)
+        self.tool_button02.clicked.connect(self.cv_ball.make_curves)
 
 
         pixmap_03 = QPixmap(self.icon_path[3])
@@ -70,22 +73,22 @@ class Tab1Widget(QWidget):
         self.tool_button03 = QPushButton()
         self.tool_button03.setIcon(scaled_pixmap_03)
         self.tool_button03.setIconSize(QSize(self.btn_size,self.btn_size))
-        self.tool_button03.clicked.connect(self.make_ball)
-
+        self.tool_button03.clicked.connect(self.cv_ForeArrow.make_curves)
+        
 
         pixmap_04 = QPixmap(self.icon_path[4])
         scaled_pixmap_04 = pixmap_04.scaled(self.btn_size, self.btn_size, Qt.KeepAspectRatio)
         self.tool_button04 = QPushButton()
         self.tool_button04.setIcon(scaled_pixmap_04)
         self.tool_button04.setIconSize(QSize(self.btn_size,self.btn_size))
-        self.tool_button04.clicked.connect(self.make_ball)
+        self.tool_button04.clicked.connect(self.cv_SingleArrow.make_curves)
 
         pixmap_05 = QPixmap(self.icon_path[5])
         scaled_pixmap_05 = pixmap_05.scaled(self.btn_size, self.btn_size, Qt.KeepAspectRatio)
         self.tool_button05 = QPushButton()
         self.tool_button05.setIcon(scaled_pixmap_05)
         self.tool_button05.setIconSize(QSize(self.btn_size,self.btn_size))
-        self.tool_button05.clicked.connect(self.make_ball)
+        self.tool_button05.clicked.connect(self.cv_Square.make_curves)
 
         hbox = QHBoxLayout()
         hbox.addWidget(self.tool_button00)
@@ -96,21 +99,6 @@ class Tab1Widget(QWidget):
         hbox.addWidget(self.tool_button05)
         
         self.setLayout(hbox)
-
-    def make_cube(self):
-        curves.make_curves("cube")
-
-    def make_cone(self):
-        curves.make_curves("cone")
-
-    def make_ball(self):
-        curves.make_curves("ball")
-
-    def make_foreArrow(self):
-        curves.make_curves("ball")
-
-    def make_ball(self):
-        curves.make_curves("ball")
 
 
 class Tab2Widget(QWidget):

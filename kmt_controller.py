@@ -35,7 +35,7 @@ class Tab1Widget(QWidget):
         self.icon_path = path.get_image_paths("main")
         
         self.btn_size = 37
-        self.cv_cube = curves.Curves("cube")
+        self.cv_cube = curves.Curves("cube")#jsonの名前読み込んでる
         self.cv_cone = curves.Curves("cone")
         self.cv_ball = curves.Curves("ball")
         self.cv_ForeArrow = curves.Curves("ForeArrow")

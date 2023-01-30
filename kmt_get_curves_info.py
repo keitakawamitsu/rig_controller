@@ -8,8 +8,9 @@ class Curve():
 
 	def get_curves_id(self,cv_name):
 		"""選択したカーブのIDをJson書き出し
-		"""
-		id = cmds.getAttr((cmds.ls(sl=1)[0])+".cv[*]")
+	"""
+	"""
+	id = cmds.getAttr((cmds.ls(sl=1)[0])+".cv[*]")
 
 		#JSONPATH = r"C:\work\script\rig_controller"
 		#JSONFILE = "test"
@@ -17,7 +18,7 @@ class Curve():
 
 		#file = JSONPATH+"/"+JSONFILE+EXT
 
-		data = {cv_name:id}
+	data = {cv_name:id}
 
 		#with open(file,"w") as f:
 		#	json.dump(data, f)

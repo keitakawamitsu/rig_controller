@@ -109,7 +109,11 @@ class Tab2Widget(QWidget):
         self.icon_path  = os.path.dirname(__file__)+"/icons/sub"
         self.btn_size = 37
 
-        self.cv_SSSSquare = curves.Curves("_Square")
+        self.cv_SSSSquare = curves.Curves("circle")
+        self.cv_aim = curves.Curves("aim")
+        self.cv_arrowsOnBall = curves.Curves("arrowsOnBall")
+        self.cv_circle = curves.Curves("circle")
+        self.cv_cog = curves.Curves("cog")
 
 
         self.button()
@@ -121,7 +125,7 @@ class Tab2Widget(QWidget):
         self.tool_button05 = QPushButton()
         self.tool_button05.setIcon(scaled_pixmap_05)
         self.tool_button05.setIconSize(QSize(self.btn_size,self.btn_size))
-        self.tool_button05.clicked.connect(self.cv_SSSSquare.make_curves)
+        self.tool_button05.clicked.connect(self.cv_aim.make_curves)
 
 
         pixmap_06 = QPixmap(self.icon_path1[1])
@@ -129,7 +133,7 @@ class Tab2Widget(QWidget):
         self.tool_button06 = QPushButton()
         self.tool_button06.setIcon(scaled_pixmap_06)
         self.tool_button06.setIconSize(QSize(self.btn_size,self.btn_size))
-        self.tool_button06.clicked.connect(self.cv_SSSSquare.make_curves)
+        self.tool_button06.clicked.connect(self.cv_arrowsOnBall.make_curves)
 
 
         pixmap_07 = QPixmap(self.icon_path1[2])
@@ -137,7 +141,7 @@ class Tab2Widget(QWidget):
         self.tool_button07 = QPushButton()
         self.tool_button07.setIcon(scaled_pixmap_07)
         self.tool_button07.setIconSize(QSize(self.btn_size,self.btn_size))
-        self.tool_button07.clicked.connect(self.cv_SSSSquare.make_curves)
+        self.tool_button07.clicked.connect(self.cv_circle.make_curves)
 
 
         pixmap_08 = QPixmap(self.icon_path1[3])
@@ -145,7 +149,7 @@ class Tab2Widget(QWidget):
         self.tool_button08 = QPushButton()
         self.tool_button08.setIcon(scaled_pixmap_08)
         self.tool_button08.setIconSize(QSize(self.btn_size,self.btn_size))
-        self.tool_button08.clicked.connect(self.cv_SSSSquare.make_curves)
+        self.tool_button08.clicked.connect(self.cv_cog.make_curves)
 
         pixmap_09 = QPixmap(self.icon_path1[4])
         scaled_pixmap_09 = pixmap_09.scaled(self.btn_size, self.btn_size, Qt.KeepAspectRatio)

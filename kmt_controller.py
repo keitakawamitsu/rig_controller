@@ -341,7 +341,6 @@ class Tab2Widget(QWidget):
         self.tool_button28.setIconSize(QSize(self.btn_size,self.btn_size))
         self.tool_button28.clicked.connect(self.cv_aim.make_curves)
 
-
         hbox3 = QHBoxLayout()
         hbox3.addWidget(self.tool_button23)
         hbox3.addWidget(self.tool_button24)
@@ -382,11 +381,8 @@ class MainWindow(QMainWindow):
     def _load_qss(self):
             """
             同階層のstyle.qssを読み込む
-            :return:
             """
             styleFile = os.path.join(os.path.dirname(__file__),'style.css')
-            print(os.path.dirname(__file__))
-            # print("======"+styleFile)
             with open(styleFile, 'r') as f:
                 style = f.read()
             self.setStyleSheet(style)

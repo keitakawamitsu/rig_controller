@@ -1,4 +1,3 @@
-# aa
 import json
 from maya import cmds as cmds
 
@@ -8,8 +7,7 @@ class Curve():
 
 	def get_curves_id(self,cv_name):
 		"""選択したカーブのIDをJson書き出し
-	"""
-	"""
+		"""
 	id = cmds.getAttr((cmds.ls(sl=1)[0])+".cv[*]")
 
 		#JSONPATH = r"C:\work\script\rig_controller"

@@ -18,11 +18,6 @@ def get_image_paths(path):
     for file in files:
         if file.endswith(EXT):
             image_list.append(os.path.join(DIR_NAME, file))
-    print("--------------------")
     return image_list
 
-"""
-if __name__ == "__main__":
-    get_image_paths()
-"""
 

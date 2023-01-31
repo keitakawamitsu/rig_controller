@@ -1,4 +1,6 @@
-# コントローラーツールのPython移行
+# kmt_controller.py
+# 製作者 : みっつ
+# 更新日 : 2023/02/01(水)
 
 import os
 import sys
@@ -356,9 +358,9 @@ class Tab2Widget(QWidget):
         self.setLayout(self.vbox)
 
 
-class MainWindow(QMainWindow):
+class MakeCurvesWindow(QMainWindow):
     def __init__(self,parent=None):
-        super(MainWindow,self).__init__(parent)
+        super(MakeCurvesWindow,self).__init__(parent)
         close_child(self)
         self.mainGUI()
         self._load_qss()
@@ -389,7 +391,7 @@ class MainWindow(QMainWindow):
 
 def main():
     maya_window = get_main_window()
-    mainwindow = MainWindow(maya_window)
+    mainwindow = MakeCurvesWindow(maya_window)
     mainwindow.show()
 
 if __name__ == "__main__":

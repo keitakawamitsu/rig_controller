@@ -341,7 +341,7 @@ class Tab2Widget(QWidget):
         self.tool_button28 = QPushButton()
         self.tool_button28.setIcon(self.scaled_pixmap_28)
         self.tool_button28.setIconSize(QSize(self.btn_size,self.btn_size))
-        self.tool_button28.clicked.connect(self.cv_aim.make_curves)
+        self.tool_button28.clicked.connect(self.cv_aim.move_cv)
 
         hbox3 = QHBoxLayout()
         hbox3.addWidget(self.tool_button23)

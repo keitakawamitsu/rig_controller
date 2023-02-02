@@ -366,7 +366,7 @@ class MakeCurvesWindow(QMainWindow):
         self._load_qss()
 
     def mainGUI(self):
-        self.setWindowTitle("Python ")
+        self.setWindowTitle("rig_controller")
         
         self.V_layout_0 = QVBoxLayout()
         self.qtab = QTabWidget()
@@ -379,10 +379,8 @@ class MakeCurvesWindow(QMainWindow):
         widget.setLayout(self.V_layout_0)
         self.setCentralWidget(widget)
 
-        #スタイルシート読み込み用関数
     def _load_qss(self):
-            """
-            同階層のstyle.qssを読み込む
+            """スタイルシート読み込み
             """
             styleFile = os.path.join(os.path.dirname(__file__),'style.css')
             with open(styleFile, 'r') as f:
